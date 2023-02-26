@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MovingObject {
     public int wallDamage = 1;
@@ -9,9 +8,19 @@ public class Player : MovingObject {
     public int pointsPerSoda = 20;
     public float restartLevelDelay = 1f;
     public Text foodText;
+    public static Player Instance { get; private set; }
+    public int Food { get => food; }
 
     private Animator animator;
     private int food;
+
+    void Awake() {
+        if (Instance == null) {
+            Instance = this;
+        } else if (Instance != this) {
+            Destroy(gameObject);
+        }
+    }
 
     protected override void OnCantMove<T>(T component) {
         Wall hitWall = component as Wall;
@@ -35,8 +44,7 @@ public class Player : MovingObject {
     }
 
     private void Restart() {
-        //nityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-        Application.LoadLevel(Application.loadedLevel);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void LoseFood(int loss) {
@@ -48,14 +56,14 @@ public class Player : MovingObject {
 
     protected override void Start() {
         animator = GetComponent<Animator>();
-        food = GameManager.instance.playerFoodPoints;
+        food = GameManager.Instance.playerFoodPoints;
         foodText.text = $"Food {food}";
         base.Start();
     }
 
     // Update is called once per frame
     void Update() {
-        if (!GameManager.instance.playersTurn) return;
+        if (!GameManager.Instance.playersTurn) return;
 
         int horizontal = 0;
         int vertical = 0;
@@ -73,26 +81,26 @@ public class Player : MovingObject {
     }
 
     private void OnDisable() {
-        GameManager.instance.playerFoodPoints = food;
+        GameManager.Instance.playerFoodPoints = food;
     }
 
     protected override void AttemptMove<T>(int xDir, int yDir) {
         food--;
         foodText.text = $"Food {food}";
 
-        Debug.Log($"{this.GetType().Name}.AttemptMove<{typeof(T).Name}>(xDir={xDir}, yDir={yDir})");
         base.AttemptMove<T>(xDir, yDir);
 
         // RaycastHit2D hit;
 
+
         CheckIfGameOver();
 
-        GameManager.instance.playersTurn = false;
+        GameManager.Instance.playersTurn = false;
     }
 
     private void CheckIfGameOver() {
         if (food <= 0) {
-            GameManager.instance.GameOver();
+            GameManager.Instance.GameOver();
         }
     }
 }

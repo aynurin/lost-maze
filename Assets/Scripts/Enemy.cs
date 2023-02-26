@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Enemy : MovingObject {
     public int playerDamage;
     private Animator animator;
-    private Transform target;
+    private Transform player;
     private bool skipMove;
 
     // Start is called before the first frame update
     protected override void Start() {
-        GameManager.instance.AddEnemyToList(this);
+        GameManager.Instance.AddEnemyToList(this);
         animator = GetComponent<Animator>();
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         base.Start();
     }
 
@@ -28,21 +29,42 @@ public class Enemy : MovingObject {
     }
 
     public void MoveEnemy() {
+
+        DijkstraDistances dist = DijkstraDistances.Find(GameManager.Instance.mazeManager.FindCellAt(player.position));
+        var currentCell = GameManager.Instance.mazeManager.FindCellAt(transform.position);
+        var solution = dist.Solve(currentCell);
         int xDir = 0;
         int yDir = 0;
+        if (solution.HasValue && solution.Value.Count > 1) {
+            var needToMoveTo = solution.Value[1];
 
-        if (Mathf.Abs(target.position.x - transform.position.x) < float.Epsilon) {
-            yDir = target.position.y > transform.position.y ? 1 : -1;
+            var direction = GameManager.Instance.mazeManager.FindDirection(currentCell, needToMoveTo);
+            xDir = (int)direction.x;
+            yDir = (int)direction.y;
         } else {
-            xDir = target.position.x > transform.position.x ? 1 : -1;
+            xDir = (int)(player.transform.position.x - transform.position.x);
+            yDir = (int)(player.transform.position.y - transform.position.y);
         }
 
-        AttemptMove<Player>(xDir, yDir);
+        var mag = (player.transform.position - transform.position).magnitude;
+        if (mag <= 1.5) {
+            Debug.Log($"Attack instead of moving with mag={mag}");
+            Attack(Player.Instance);
+        } else {
+            Debug.Log($"Moving with mag={mag}");
+            if (xDir > 0) {
+                yDir = 0;
+            }
+            AttemptMove<Player>(xDir, yDir);
+        }
     }
 
     protected override void OnCantMove<T>(T component) {
-        Player hitPlayer = component as Player;
+        Attack(component as Player);
+    }
+
+    void Attack(Player player) {
         animator.SetTrigger("EnemyAttack");
-        hitPlayer.LoseFood(playerDamage);
+        player.LoseFood(playerDamage);
     }
 }

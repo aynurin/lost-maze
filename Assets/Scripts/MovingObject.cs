@@ -48,6 +48,7 @@ public abstract class MovingObject : MonoBehaviour {
         where T : Component {
         RaycastHit2D hit;
         bool canMove = Move(xDir, yDir, out hit);
+
         if (hit.transform == null) {
             return;
         }

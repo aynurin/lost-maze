@@ -21,22 +21,74 @@ public class MazeManager : MonoBehaviour {
 
     private Transform boardHolder;
 
-    public Transform BoardHolder { get => boardHolder; }
-
     public void SetupScene(int level) {
         mazeGrid = new MazeGrid(rows, columns);
         new AldousBroderMazeGenerator().Generate(mazeGrid);
         distances = DijkstraDistances.FindLongest(mazeGrid[0, 0]);
 
+        var allCells = new List<MazeCell>(mazeGrid.Cells);
+        var solution = new List<MazeCell>(distances.Solution.Value);
+
         Groundwork();
         CreateMaze();
+        PlacePlayer(allCells, solution);
+        PlaceEnemies(level, allCells, solution);
+        PlaceExit(allCells, solution);
+        PlaceFood(allCells, solution);
+    }
+    private void PlacePlayer(List<MazeCell> allCells, List<MazeCell> solutionCells) {
+        var cell = solutionCells.First();
+        Debug.Log($"PlacePlayer at {cell.Col}x{cell.Row} ({allCells.Count}, {solutionCells.Count})");
+        PlaceInstance(GameObject.FindGameObjectWithTag("Player"), cell);
+        RemoveCellsArea(cell, 3, allCells, solutionCells);
+    }
 
-        //PlaceTile(playerTile, distances.Solution.Value.First());
-        PlaceInstance(GameObject.FindGameObjectWithTag("Player"), distances.Solution.Value.First());
-        PlaceTile(exitTile, distances.Solution.Value.Last());
-        PlaceTiles(enemiesTiles, RandomItems(mazeGrid.Cells, (int)Mathf.Log(level, 2F)));
-        PlaceTiles(foodTiles, RandomItems(distances.Solution.Value, (int)Mathf.Log(level, 2F)));
-        //distances.Solution.Value[0].
+    private void RemoveCellsArea(MazeCell anchor, int radius, List<MazeCell> allCells, List<MazeCell> solutionCells) {
+        for (int i = allCells.Count - 1; i >= 0; i--) {
+            var cell = allCells[i];
+            if (Math.Abs(cell.Row - anchor.Row) < radius && Math.Abs(cell.Col - anchor.Col) < radius) {
+                Debug.Log($"Removing cell from the pool: {cell.Col}x{cell.Row}");
+                allCells.RemoveAt(i);
+                solutionCells.RemoveAll(c => c.Row == cell.Row && c.Col == cell.Col);
+            }
+        }
+    }
+
+    private void PlaceExit(List<MazeCell> allCells, List<MazeCell> solutionCells) {
+        var cell = solutionCells.Last();
+        Debug.Log($"PlaceExit at {cell.Col}x{cell.Row} ({allCells.Count}, {solutionCells.Count})");
+        PlaceTile(exitTile, cell);
+        RemoveCellsArea(cell, 3, allCells, solutionCells);
+    }
+
+    private void PlaceEnemies(int level, List<MazeCell> allCells, List<MazeCell> solutionCells) {
+        var enemyCells = new List<MazeCell>(RandomItems(allCells, (int)Mathf.Log(level, 2F) + 1));
+        PlaceTiles(enemiesTiles, enemyCells);
+        foreach (var cell in enemyCells) {
+            Debug.Log($"PlaceEnemies at {cell.Col}x{cell.Row} ({allCells.Count}, {solutionCells.Count})");
+            RemoveCellsArea(cell, 1, allCells, solutionCells);
+        }
+    }
+
+    private void PlaceFood(List<MazeCell> allCells, List<MazeCell> solutionCells) {
+        // TODO: Make current food accessible from anywhere
+        // int currentFood = Player.Instance == null ? GameManager.Instance.playerFoodPoints : Player.Instance.Food;
+        int minimumNeeded = (int)(((mazeGrid.Cols * cellWidth) + (mazeGrid.Rows * cellHeight)) * 1.1D);
+        int needed = minimumNeeded; // - currentFood;
+        int maxItems = 10;
+        while (needed > 0 && maxItems > 0) {
+            maxItems--;
+            var tile = RandomItem(foodTiles);
+            if (tile.tag == "Food") {
+                needed -= Math.Max(0, (Player.Instance.pointsPerFood - mazeGrid.Rows));
+            } else if (tile.tag == "Soda") {
+                needed -= Math.Max(0, (Player.Instance.pointsPerSoda - mazeGrid.Rows));
+            }
+            var cell = RandomItem(mazeGrid.Cells);
+            Debug.Log($"Place {tile.tag} at {cell.Col}x{cell.Row}, left to place: {needed} ({allCells.Count}, {solutionCells.Count})");
+            PlaceTile(tile, cell);
+            RemoveCellsArea(cell, 1, allCells, solutionCells);
+        }
     }
 
     private void PlaceTile(GameObject tile, MazeCell cell) {
@@ -52,6 +104,18 @@ public class MazeManager : MonoBehaviour {
         var y = -cell.Row * cellHeight - cellHeight / 2;
         return new Vector3(x, y, 0f);
     }
+
+    internal Vector3 FindDirection(MazeCell from, MazeCell to) {
+        return new Vector3(to.Col - from.Col, -(to.Row - from.Row));
+    }
+
+    internal MazeCell FindCellAt(Vector3 position) {
+        var col = (int)position.x / cellWidth;
+        var row = -(int)position.y / cellHeight;
+        var cell = mazeGrid[row, col];
+        return cell;
+    }
+
 
     private void PlaceTiles(ICollection<GameObject> tiles, IEnumerable<MazeCell> cells) {
         foreach (var cell in cells) {
@@ -81,7 +145,7 @@ public class MazeManager : MonoBehaviour {
         return pool.ElementAt(UnityEngine.Random.Range(0, pool.Count));
     }
 
-    private IEnumerable<T> RandomItems<T>(IList<T> value, int count) {
+    private IEnumerable<T> RandomItems<T>(ICollection<T> value, int count) {
         for (int i = 0; i < count; i++) {
             yield return RandomItem(value);
         }
@@ -342,16 +406,6 @@ public class MazeManager : MonoBehaviour {
         }
 
         return found ? tile : allTiles[0];
-    }
-
-    // Start is called before the first frame update
-    void Start() {
-
-    }
-
-    // Update is called once per frame
-    void Update() {
-
     }
 
     private struct Position {
