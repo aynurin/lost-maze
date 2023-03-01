@@ -41,9 +41,11 @@ public class Enemy : MovingObject {
             var direction = GameManager.Instance.mazeManager.FindDirection(currentCell, needToMoveTo);
             xDir = (int)direction.x;
             yDir = (int)direction.y;
+            Debug.Log($"Moving to {direction.x}x{direction.y} (1)");
         } else {
             xDir = (int)(player.transform.position.x - transform.position.x);
             yDir = (int)(player.transform.position.y - transform.position.y);
+            Debug.Log($"Moving to {xDir}x{yDir} (2)");
         }
 
         var mag = (player.transform.position - transform.position).magnitude;
@@ -51,7 +53,7 @@ public class Enemy : MovingObject {
             Debug.Log($"Attack instead of moving with mag={mag}");
             Attack(Player.Instance);
         } else {
-            Debug.Log($"Moving with mag={mag}");
+            Debug.Log($"Moving to {xDir}x{yDir} (3) with mag={mag}");
             if (xDir > 0) {
                 yDir = 0;
             }

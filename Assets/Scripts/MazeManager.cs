@@ -84,7 +84,7 @@ public class MazeManager : MonoBehaviour {
             } else if (tile.tag == "Soda") {
                 needed -= Math.Max(0, (Player.Instance.pointsPerSoda - mazeGrid.Rows));
             }
-            var cell = RandomItem(mazeGrid.Cells);
+            var cell = RandomItem(allCells);
             Debug.Log($"Place {tile.tag} at {cell.Col}x{cell.Row}, left to place: {needed} ({allCells.Count}, {solutionCells.Count})");
             PlaceTile(tile, cell);
             RemoveCellsArea(cell, 1, allCells, solutionCells);
