@@ -17,16 +17,25 @@ public abstract class MovingObject : MonoBehaviour {
         inverseMoveTime = 1f / moveTime;
     }
 
-    protected bool Move(int xDir, int yDir, out RaycastHit2D hit) {
-        Vector2 start = transform.position;
-        Vector2 end = start + new Vector2(xDir, yDir);
+    protected bool Move(float xDir, float yDir, out RaycastHit2D hit) {
+        Vector2 direction = new Vector2(xDir, yDir);
+
+        Vector2 startPosition = transform.position;
+        Vector2 endPosition = startPosition + direction;
+
+        Vector2 objectSize = (Vector2)(this.transform.GetComponent<Renderer>().bounds.size);
+        Vector2 endBodyEdge = endPosition + (objectSize / 2 * direction.normalized);
 
         boxCollider.enabled = false;
-        hit = Physics2D.Linecast(start, end, blockingLayer);
+        hit = Physics2D.Linecast(startPosition, endBodyEdge, blockingLayer);
         boxCollider.enabled = true;
 
+        if (this.GetType().Name == "Player") {
+            Debug.Log($"Move linecast {startPosition} to {endBodyEdge} ({objectSize}, {direction.normalized}), is collision? {hit.transform != null}");
+        }
+
         if (hit.transform == null) {
-            StartCoroutine(SmoothMovement(end));
+            StartCoroutine(SmoothMovement(endPosition));
             return true;
         }
 
@@ -44,7 +53,7 @@ public abstract class MovingObject : MonoBehaviour {
         }
     }
 
-    protected virtual void AttemptMove<T>(int xDir, int yDir)
+    protected virtual void AttemptMove<T>(float xDir, float yDir)
         where T : Component {
         RaycastHit2D hit;
         bool canMove = Move(xDir, yDir, out hit);

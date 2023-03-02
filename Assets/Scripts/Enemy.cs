@@ -9,6 +9,9 @@ public class Enemy : MovingObject {
     private Transform player;
     private bool skipMove;
 
+    public AudioClip attack1;
+    public AudioClip attack2;
+
     // Start is called before the first frame update
     protected override void Start() {
         GameManager.Instance.AddEnemyToList(this);
@@ -17,7 +20,7 @@ public class Enemy : MovingObject {
         base.Start();
     }
 
-    protected override void AttemptMove<T>(int xDir, int yDir) {
+    protected override void AttemptMove<T>(float xDir, float yDir) {
         if (skipMove) {
             skipMove = false;
             return;
@@ -41,19 +44,15 @@ public class Enemy : MovingObject {
             var direction = GameManager.Instance.mazeManager.FindDirection(currentCell, needToMoveTo);
             xDir = (int)direction.x;
             yDir = (int)direction.y;
-            Debug.Log($"Moving to {direction.x}x{direction.y} (1)");
         } else {
             xDir = (int)(player.transform.position.x - transform.position.x);
             yDir = (int)(player.transform.position.y - transform.position.y);
-            Debug.Log($"Moving to {xDir}x{yDir} (2)");
         }
 
         var mag = (player.transform.position - transform.position).magnitude;
         if (mag <= 1.5) {
-            Debug.Log($"Attack instead of moving with mag={mag}");
             Attack(Player.Instance);
         } else {
-            Debug.Log($"Moving to {xDir}x{yDir} (3) with mag={mag}");
             if (xDir > 0) {
                 yDir = 0;
             }
@@ -67,6 +66,7 @@ public class Enemy : MovingObject {
 
     void Attack(Player player) {
         animator.SetTrigger("EnemyAttack");
+        SoundManager.Instance.RandomizeSfx(attack1, attack2);
         player.LoseFood(playerDamage);
     }
 }

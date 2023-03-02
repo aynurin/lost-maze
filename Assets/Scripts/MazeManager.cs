@@ -38,8 +38,7 @@ public class MazeManager : MonoBehaviour {
     }
     private void PlacePlayer(List<MazeCell> allCells, List<MazeCell> solutionCells) {
         var cell = solutionCells.First();
-        Debug.Log($"PlacePlayer at {cell.Col}x{cell.Row} ({allCells.Count}, {solutionCells.Count})");
-        PlaceInstance(GameObject.FindGameObjectWithTag("Player"), cell);
+        PlaceInstance(GameManager.Instance.Player, cell);
         RemoveCellsArea(cell, 3, allCells, solutionCells);
     }
 
@@ -47,7 +46,6 @@ public class MazeManager : MonoBehaviour {
         for (int i = allCells.Count - 1; i >= 0; i--) {
             var cell = allCells[i];
             if (Math.Abs(cell.Row - anchor.Row) < radius && Math.Abs(cell.Col - anchor.Col) < radius) {
-                Debug.Log($"Removing cell from the pool: {cell.Col}x{cell.Row}");
                 allCells.RemoveAt(i);
                 solutionCells.RemoveAll(c => c.Row == cell.Row && c.Col == cell.Col);
             }
@@ -56,7 +54,6 @@ public class MazeManager : MonoBehaviour {
 
     private void PlaceExit(List<MazeCell> allCells, List<MazeCell> solutionCells) {
         var cell = solutionCells.Last();
-        Debug.Log($"PlaceExit at {cell.Col}x{cell.Row} ({allCells.Count}, {solutionCells.Count})");
         PlaceTile(exitTile, cell);
         RemoveCellsArea(cell, 3, allCells, solutionCells);
     }
@@ -65,7 +62,6 @@ public class MazeManager : MonoBehaviour {
         var enemyCells = new List<MazeCell>(RandomItems(allCells, (int)Mathf.Log(level, 2F) + 1));
         PlaceTiles(enemiesTiles, enemyCells);
         foreach (var cell in enemyCells) {
-            Debug.Log($"PlaceEnemies at {cell.Col}x{cell.Row} ({allCells.Count}, {solutionCells.Count})");
             RemoveCellsArea(cell, 1, allCells, solutionCells);
         }
     }
@@ -85,7 +81,6 @@ public class MazeManager : MonoBehaviour {
                 needed -= Math.Max(0, (Player.Instance.pointsPerSoda - mazeGrid.Rows));
             }
             var cell = RandomItem(allCells);
-            Debug.Log($"Place {tile.tag} at {cell.Col}x{cell.Row}, left to place: {needed} ({allCells.Count}, {solutionCells.Count})");
             PlaceTile(tile, cell);
             RemoveCellsArea(cell, 1, allCells, solutionCells);
         }

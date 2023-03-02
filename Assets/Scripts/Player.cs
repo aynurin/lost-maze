@@ -11,6 +11,14 @@ public class Player : MovingObject {
     public static Player Instance { get; private set; }
     public int Food { get => food; }
 
+    public AudioClip moveSound1;
+    public AudioClip moveSound2;
+    public AudioClip eatSound1;
+    public AudioClip eatSound2;
+    public AudioClip drinkSound1;
+    public AudioClip drinkSound2;
+    public AudioClip gameOverSound1;
+
     private Animator animator;
     private int food;
 
@@ -35,10 +43,12 @@ public class Player : MovingObject {
         } else if (other.tag == "Food") {
             food += pointsPerFood;
             foodText.text = $"+{pointsPerFood} Food: {food}";
+            SoundManager.Instance.RandomizeSfx(eatSound1, eatSound2);
             other.gameObject.SetActive(false);
         } else if (other.tag == "Soda") {
             food += pointsPerSoda;
             foodText.text = $"+{pointsPerSoda} Food: {food}";
+            SoundManager.Instance.RandomizeSfx(drinkSound1, drinkSound2);
             other.gameObject.SetActive(false);
         }
     }
@@ -65,11 +75,8 @@ public class Player : MovingObject {
     void Update() {
         if (!GameManager.Instance.playersTurn) return;
 
-        int horizontal = 0;
-        int vertical = 0;
-
-        horizontal = (int)Input.GetAxisRaw("Horizontal");
-        vertical = (int)Input.GetAxisRaw("Vertical");
+        var horizontal = (int)Input.GetAxisRaw("Horizontal");
+        var vertical = (int)Input.GetAxisRaw("Vertical");
 
         if (horizontal != 0) {
             vertical = 0;
@@ -84,14 +91,15 @@ public class Player : MovingObject {
         GameManager.Instance.playerFoodPoints = food;
     }
 
-    protected override void AttemptMove<T>(int xDir, int yDir) {
-        food--;
-        foodText.text = $"Food {food}";
-
+    protected override void AttemptMove<T>(float xDir, float yDir) {
         base.AttemptMove<T>(xDir, yDir);
 
-        // RaycastHit2D hit;
-
+        RaycastHit2D hit;
+        if (Move(xDir, yDir, out hit)) {
+            food--;
+            foodText.text = $"Food {food}";
+            SoundManager.Instance.RandomizeSfx(moveSound1, moveSound2);
+        }
 
         CheckIfGameOver();
 
@@ -100,6 +108,8 @@ public class Player : MovingObject {
 
     private void CheckIfGameOver() {
         if (food <= 0) {
+            SoundManager.Instance.PlaySingle(gameOverSound1);
+            SoundManager.Instance.musicSource.Stop();
             GameManager.Instance.GameOver();
         }
     }

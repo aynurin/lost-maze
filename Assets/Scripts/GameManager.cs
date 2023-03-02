@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour {
     private GameObject levelImage;
     private List<Enemy> enemies;
 
+    public GameObject Player { get => GameObject.FindGameObjectWithTag("Player"); }
+
     void Awake() {
         if (Instance == null) {
             Instance = this;
