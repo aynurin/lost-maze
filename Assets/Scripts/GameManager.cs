@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,20 +9,20 @@ public class GameManager : MonoBehaviour {
     public static GameManager Instance { get; private set; }
 
     public float turnDelay = .1f;
-    public int playerFoodPoints = 100;
+    public float playerFoodPoints = 100;
     public MazeManager mazeManager;
 
     [HideInInspector] internal bool playersTurn = true;
 
     private int level = 1;
     private float levelStartDelay = 2f;
-    private bool doingSetup;
     private bool enemiesMoving;
     private Text levelText;
     private GameObject levelImage;
     private List<Enemy> enemies;
 
-    public GameObject Player { get => GameObject.FindGameObjectWithTag("Player"); }
+    public Player Player { get => GameObject.FindGameObjectWithTag("Player").GetComponent<Player>(); }
+    public bool IsLoading { get; private set; }
 
     void Awake() {
         if (Instance == null) {
@@ -58,7 +59,7 @@ public class GameManager : MonoBehaviour {
     }
 
     void InitGame() {
-        doingSetup = true;
+        IsLoading = true;
         levelImage = GameObject.Find("LevelImage");
         levelText = GameObject.Find("LevelText").GetComponent<Text>();
         levelText.text = "Day " + level;
@@ -74,37 +75,12 @@ public class GameManager : MonoBehaviour {
 
     private void HideLevelImage() {
         levelImage.SetActive(false);
-        doingSetup = false;
+        IsLoading = false;
     }
 
     void CenterCamera() {
         var mazeCenter = new Vector3(mazeManager.columns * mazeManager.cellWidth / 2, -mazeManager.rows * mazeManager.cellHeight / 2, -10);
         GameObject.Find("Main Camera").transform.position = mazeCenter;
-    }
-
-    IEnumerator MoveEnemies() {
-        enemiesMoving = true;
-        yield return new WaitForSeconds(turnDelay);
-        if (enemies.Count == 0) {
-            yield return new WaitForSeconds(turnDelay);
-        }
-
-        for (int i = 0; i < enemies.Count; i++) {
-            enemies[i].MoveEnemy();
-            yield return new WaitForSeconds(enemies[i].moveTime);
-        }
-
-        playersTurn = true;
-        enemiesMoving = false;
-    }
-
-    // Update is called once per frame
-    void Update() {
-        if (playersTurn || enemiesMoving || doingSetup) {
-            return;
-        }
-
-        StartCoroutine(MoveEnemies());
     }
 
     public void AddEnemyToList(Enemy script) {

@@ -38,7 +38,7 @@ public class MazeManager : MonoBehaviour {
     }
     private void PlacePlayer(List<MazeCell> allCells, List<MazeCell> solutionCells) {
         var cell = solutionCells.First();
-        PlaceInstance(GameManager.Instance.Player, cell);
+        PlaceInstance(GameManager.Instance.Player.gameObject, cell);
         RemoveCellsArea(cell, 3, allCells, solutionCells);
     }
 
@@ -67,8 +67,6 @@ public class MazeManager : MonoBehaviour {
     }
 
     private void PlaceFood(List<MazeCell> allCells, List<MazeCell> solutionCells) {
-        // TODO: Make current food accessible from anywhere
-        // int currentFood = Player.Instance == null ? GameManager.Instance.playerFoodPoints : Player.Instance.Food;
         int minimumNeeded = (int)(((mazeGrid.Cols * cellWidth) + (mazeGrid.Rows * cellHeight)) * 1.1D);
         int needed = minimumNeeded; // - currentFood;
         int maxItems = 10;
@@ -94,7 +92,7 @@ public class MazeManager : MonoBehaviour {
         gameObject.transform.position = FindPosition(cell);
     }
 
-    private Vector3 FindPosition(MazeCell cell) {
+    internal Vector3 FindPosition(MazeCell cell) {
         var x = cell.Col * cellWidth + cellWidth / 2;
         var y = -cell.Row * cellHeight - cellHeight / 2;
         return new Vector3(x, y, 0f);

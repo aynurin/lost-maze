@@ -1,72 +1,94 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 public class Enemy : MovingObject {
     public int playerDamage;
+    public float attacksPerSecond;
+    private float attackWaitTime = 0f;
     private Animator animator;
-    private Transform player;
+    private Player player;
     private bool skipMove;
+    private BoxCollider2D boxCollider;
 
     public AudioClip attack1;
     public AudioClip attack2;
+
+    private Vector2 currentGoal = Vector2.zero;
 
     // Start is called before the first frame update
     protected override void Start() {
         GameManager.Instance.AddEnemyToList(this);
         animator = GetComponent<Animator>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameManager.Instance.Player;
         base.Start();
     }
 
-    protected override void AttemptMove<T>(float xDir, float yDir) {
-        if (skipMove) {
-            skipMove = false;
-            return;
+    void Reset() {
+        moveUnitsPerSecond = 1.5f;
+        attacksPerSecond = 2f;
+    }
+
+    // Update is called once per frame
+    void Update() {
+        if (((Vector2)BoxCollider.bounds.center - currentGoal).sqrMagnitude < 0.2) {
+            currentGoal = Vector2.zero;
         }
-
-        base.AttemptMove<T>(xDir, yDir);
-
-        skipMove = true;
+        if (!GameManager.Instance.IsLoading) {
+            MoveEnemy();
+        }
+        attackWaitTime += Time.deltaTime;
     }
 
     public void MoveEnemy() {
-
-        DijkstraDistances dist = DijkstraDistances.Find(GameManager.Instance.mazeManager.FindCellAt(player.position));
-        var currentCell = GameManager.Instance.mazeManager.FindCellAt(transform.position);
-        var solution = dist.Solve(currentCell);
-        int xDir = 0;
-        int yDir = 0;
-        if (solution.HasValue && solution.Value.Count > 1) {
-            var needToMoveTo = solution.Value[1];
-
-            var direction = GameManager.Instance.mazeManager.FindDirection(currentCell, needToMoveTo);
-            xDir = (int)direction.x;
-            yDir = (int)direction.y;
+        var currentCell = GameManager.Instance.mazeManager.FindCellAt(BoxCollider.bounds.center);
+        var nextMazeCell = GetNextMazeCell(currentCell);
+        var playerDirection = player.BoxCollider.bounds.center - BoxCollider.bounds.center;
+        Vector2 direction;
+        if (nextMazeCell != null) {
+            if (currentGoal == Vector2.zero) {
+                currentGoal = GameManager.Instance.mazeManager.FindPosition(nextMazeCell);
+            }
+            direction = (currentGoal - (Vector2)BoxCollider.bounds.center).normalized;
         } else {
-            xDir = (int)(player.transform.position.x - transform.position.x);
-            yDir = (int)(player.transform.position.y - transform.position.y);
+            direction = playerDirection.sqrMagnitude > 2 ? playerDirection.normalized : playerDirection;
+            currentGoal = Vector2.zero;
         }
 
-        var mag = (player.transform.position - transform.position).magnitude;
-        if (mag <= 1.5) {
-            Attack(Player.Instance);
-        } else {
-            if (xDir > 0) {
-                yDir = 0;
-            }
-            AttemptMove<Player>(xDir, yDir);
+        var mag = playerDirection.magnitude;
+        if (playerDirection.sqrMagnitude > 1) {
+            StartMoving(direction);
         }
     }
 
-    protected override void OnCantMove<T>(T component) {
-        Attack(component as Player);
+    private MazeCell GetNextMazeCell(MazeCell startAt) {
+        DijkstraDistances dist = DijkstraDistances.Find(GameManager.Instance.mazeManager.FindCellAt(player.BoxCollider.bounds.center));
+        var solution = dist.Solve(startAt);
+        if (solution.HasValue && solution.Value.Count > 1) {
+            return solution.Value[1];
+        } else {
+            return null;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision) {
+        var player = collision.gameObject.GetComponent<Player>();
+        if (player != null) {
+            Attack(player);
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D collision) {
+        var player = collision.gameObject.GetComponent<Player>();
+        if (player != null) {
+            Attack(player);
+        }
     }
 
     void Attack(Player player) {
-        animator.SetTrigger("EnemyAttack");
-        SoundManager.Instance.RandomizeSfx(attack1, attack2);
-        player.LoseFood(playerDamage);
+        if (attackWaitTime >= 1f / attacksPerSecond) {
+            animator.SetTrigger("EnemyAttack");
+            SoundManager.Instance.RandomizeSfx(attack1, attack2);
+            player.TakeDamage((float)playerDamage);
+            attackWaitTime = 0f;
+        }
     }
 }
