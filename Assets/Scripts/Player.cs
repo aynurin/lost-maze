@@ -113,7 +113,7 @@ public class Player : MovingObject {
     void FixedUpdate() {
         attackWaitTime += Time.fixedDeltaTime;
         if (movement.magnitude > float.Epsilon) {
-            StartMoving(movement);
+            StartMoving(movement.sqrMagnitude > 1 ? movement.normalized : movement);
         }
     }
 
