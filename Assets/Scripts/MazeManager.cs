@@ -59,7 +59,7 @@ public class MazeManager : MonoBehaviour {
     }
 
     private void PlaceEnemies(int level, List<MazeCell> allCells, List<MazeCell> solutionCells) {
-        var enemyCells = new List<MazeCell>(RandomItems(allCells, (int)Mathf.Log(level, 2F) + 1));
+        var enemyCells = new List<MazeCell>(allCells.RandomItems((int)Mathf.Log(level, 2F) + 1));
         PlaceTiles(enemiesTiles, enemyCells);
         foreach (var cell in enemyCells) {
             RemoveCellsArea(cell, 1, allCells, solutionCells);
@@ -72,13 +72,13 @@ public class MazeManager : MonoBehaviour {
         int maxItems = 10;
         while (needed > 0 && maxItems > 0) {
             maxItems--;
-            var tile = RandomItem(foodTiles);
+            var tile = foodTiles.RandomItem();
             if (tile.tag == "Food") {
                 needed -= Math.Max(0, (Player.Instance.pointsPerFood - mazeGrid.Rows));
             } else if (tile.tag == "Soda") {
                 needed -= Math.Max(0, (Player.Instance.pointsPerSoda - mazeGrid.Rows));
             }
-            var cell = RandomItem(allCells);
+            var cell = allCells.RandomItem();
             PlaceTile(tile, cell);
             RemoveCellsArea(cell, 1, allCells, solutionCells);
         }
@@ -112,7 +112,7 @@ public class MazeManager : MonoBehaviour {
 
     private void PlaceTiles(ICollection<GameObject> tiles, IEnumerable<MazeCell> cells) {
         foreach (var cell in cells) {
-            PlaceTile(RandomItem(tiles), cell);
+            PlaceTile(tiles.RandomItem(), cell);
         }
     }
 
@@ -124,35 +124,15 @@ public class MazeManager : MonoBehaviour {
             for (int y = -10; y < mazeGrid.Rows * cellHeight + 10; y++) {
                 GameObject tileToRender;
                 if (x < 0 || y < 0 || x >= mazeGrid.Cols * cellWidth || y >= mazeGrid.Rows * cellHeight) {
-                    tileToRender = RandomItem(outerAreaTiles);
+                    tileToRender = outerAreaTiles.RandomItem();
                 } else {
-                    tileToRender = RandomItem(groundTiles);
+                    tileToRender = groundTiles.RandomItem();
                 }
                 var groundTile = (GameObject)Instantiate(tileToRender, new Vector3(x, -y, 0f), Quaternion.identity);
                 groundTile.transform.SetParent(boardHolder);
             }
         }
     }
-
-    private static T RandomItem<T>(ICollection<T> pool) {
-        return pool.ElementAt(UnityEngine.Random.Range(0, pool.Count));
-    }
-
-    private IEnumerable<T> RandomItems<T>(ICollection<T> value, int count) {
-        for (int i = 0; i < count; i++) {
-            yield return RandomItem(value);
-        }
-    }
-
-    private IList<T> RandomItems<T>(T[] value, int count) {
-        List<T> vals = new List<T>();
-        for (int i = 0; i < count; i++) {
-            vals.Add(RandomItem(value));
-        }
-        return vals;
-    }
-
-
 
     public void CreateMaze() {
         boardHolder = new GameObject("Board").transform;
@@ -168,9 +148,8 @@ public class MazeManager : MonoBehaviour {
                     cellCoords = GetEdgeCoords(x, y);
                 }
                 foreach (var coord in cellCoords) {
-                    var tile = LookupTile(coord.Key, mazeTiles);
                     foreach (var position in coord.Value) {
-                        var mazeTile = (GameObject)Instantiate(tile, new Vector3(position.x, -position.y, 0f), Quaternion.identity);
+                        var mazeTile = (GameObject)Instantiate(LookupTile(coord.Key, mazeTiles), new Vector3(position.x, -position.y, 0f), Quaternion.identity);
                         mazeTile.transform.SetParent(boardHolder);
                     }
                 }
@@ -339,7 +318,7 @@ public class MazeManager : MonoBehaviour {
             }
             cellCoords.Add(tileSide, positions);
         } else {
-            throw new InvalidOperationException($"Perhaps you want to use GetCellCoords(MazeCell) for {virtualX}x{virtualY} coord");
+            Debug.LogError($"Perhaps you want to use GetCellCoords(MazeCell) for {virtualX}x{virtualY} coord");
         }
         return cellCoords;
     }
@@ -389,16 +368,18 @@ public class MazeManager : MonoBehaviour {
             nameParts.Add("G" + gates.ToString());
         }
 
-        var prefabName = String.Join("_", nameParts);
+        var prefabKey = String.Join("_", nameParts) + "_100_";
 
-        GameObject tile = allTiles.Where((go, i) => go.name == prefabName).FirstOrDefault();
+        GameObject tile = allTiles.Where(pf => pf.name.StartsWith(prefabKey) && pf.name.Length <= prefabKey.Length + 2).RandomOrNull();
         var found = tile != null;
 
-        if (!found) {
-            Debug.Log($"tile: {prefabName} not found");
+        if (tile == null) {
+            Debug.LogError($"tile '{prefabKey}' not found");
+        } else {
+            Debug.Log($"Found tile {tile.name}");
         }
 
-        return found ? tile : allTiles[0];
+        return tile;
     }
 
     private struct Position {
