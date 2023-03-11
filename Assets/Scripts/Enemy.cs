@@ -70,6 +70,7 @@ public class Enemy : MovingObject {
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
+        currentGoal = Vector2.zero;
         var player = collision.gameObject.GetComponent<Player>();
         if (player != null) {
             Attack(player);
@@ -77,6 +78,7 @@ public class Enemy : MovingObject {
     }
 
     void OnCollisionStay2D(Collision2D collision) {
+        currentGoal = Vector2.zero;
         var player = collision.gameObject.GetComponent<Player>();
         if (player != null) {
             Attack(player);

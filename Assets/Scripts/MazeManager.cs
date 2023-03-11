@@ -368,15 +368,34 @@ public class MazeManager : MonoBehaviour {
             nameParts.Add("G" + gates.ToString());
         }
 
-        var prefabKey = String.Join("_", nameParts) + "_100_";
+        var prefabKey = String.Join("_", nameParts);
 
-        GameObject tile = allTiles.Where(pf => pf.name.StartsWith(prefabKey) && pf.name.Length <= prefabKey.Length + 2).RandomOrNull();
+        GameObject tile = allTiles.Where(pf => pf.NameLike($"{prefabKey}_100_", 2)).RandomOrNull();
         var found = tile != null;
 
         if (tile == null) {
             Debug.LogError($"tile '{prefabKey}' not found");
-        } else {
-            Debug.Log($"Found tile {tile.name}");
+        }
+
+        var wall = tile.GetComponent<Wall>();
+        if (wall != null) {
+            wall.dmg75Sprite = allTiles.Where(pf => pf.NameLike($"{prefabKey}_75_", 2)).RandomOrNull<SpriteRenderer>().sprite;
+            wall.dmg50Sprite = allTiles.Where(pf => pf.NameLike($"{prefabKey}_50_", 2)).RandomOrNull<SpriteRenderer>().sprite;
+            wall.dmg25Sprite = allTiles.Where(pf => pf.NameLike($"{prefabKey}_25_", 2)).RandomOrNull<SpriteRenderer>().sprite;
+            wall.dmg00Sprite = allTiles.Where(pf => pf.NameLike($"{prefabKey}_0_", 2)).RandomOrNull<SpriteRenderer>().sprite;
+
+            if (wall.dmg75Sprite == null) {
+                Debug.LogError($"dmg75Sprite '{prefabKey}' not found");
+            }
+            if (wall.dmg50Sprite == null) {
+                Debug.LogError($"dmg50Sprite '{prefabKey}' not found");
+            }
+            if (wall.dmg25Sprite == null) {
+                Debug.LogError($"dmg25Sprite '{prefabKey}' not found");
+            }
+            if (wall.dmg00Sprite == null) {
+                Debug.LogError($"dmg00Sprite '{prefabKey}' not found");
+            }
         }
 
         return tile;

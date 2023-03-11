@@ -48,14 +48,14 @@ public class Player : MovingObject {
 
     void OnCollisionEnter2D(Collision2D collision) {
         var wall = collision.gameObject.GetComponent<Wall>();
-        if (wall != null) {
+        if (wall != null && collision.otherCollider.enabled) {
             attackWaitTime = 0f; // don't start breaking the wall immediately
         }
     }
 
     void OnCollisionStay2D(Collision2D collision) {
         var wall = collision.gameObject.GetComponent<Wall>();
-        if (wall != null) {
+        if (wall != null && collision.otherCollider.enabled) {
             CollideWithWall(wall, collision);
         }
     }
@@ -108,6 +108,10 @@ public class Player : MovingObject {
         // movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        if (movement.sqrMagnitude > float.Epsilon) {
+            Rigidbody.velocity = Vector2.zero;
+        }
+        Debug.Log($"Player velocity: {Rigidbody.velocity}");
     }
 
     void FixedUpdate() {

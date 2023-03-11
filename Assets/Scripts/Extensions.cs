@@ -1,8 +1,8 @@
 using System.Linq;
 using System.Collections.Generic;
+using UnityEngine;
 
 public static class Extensions {
-    private static int seed = 1;
     public static T RandomOrNull<T>(this IEnumerable<T> items) {
         var countable = new List<T>(items);
         if (countable.Count == 0) {
@@ -11,8 +11,15 @@ public static class Extensions {
         return countable.RandomItem();
     }
 
+    public static T RandomOrNull<T>(this IEnumerable<GameObject> items) {
+        var countable = new List<T>(items.Select(go => go.GetComponent<T>()));
+        if (countable.Count == 0) {
+            return default(T);
+        }
+        return countable.RandomItem();
+    }
+
     public static T RandomItem<T>(this ICollection<T> pool) {
-        // UnityEngine.Random.InitState(++seed);
         return pool.ElementAt(UnityEngine.Random.Range(0, pool.Count));
     }
 
@@ -28,5 +35,9 @@ public static class Extensions {
             vals.Add(RandomItem(value));
         }
         return vals;
+    }
+
+    public static bool NameLike(this GameObject obj, string prefix, int maxNameLengthDelta) {
+        return obj.name.StartsWith(prefix) && obj.name.Length < prefix.Length + maxNameLengthDelta;
     }
 }
