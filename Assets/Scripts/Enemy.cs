@@ -54,6 +54,11 @@ public class Enemy : MovingObject {
         }
 
         var mag = playerDirection.magnitude;
+        if (playerDirection.sqrMagnitude > float.Epsilon) {
+            animator.SetFloat("horizontal", direction.x);
+            animator.SetFloat("vertical", direction.y);
+            animator.SetInteger("mode", 3);
+        }
         if (playerDirection.sqrMagnitude > 1) {
             StartMoving(direction);
         }
@@ -87,7 +92,11 @@ public class Enemy : MovingObject {
 
     void Attack(Player player) {
         if (attackWaitTime >= 1f / attacksPerSecond) {
-            animator.SetTrigger("EnemyAttack");
+            if (animator.parameters.Length == 1) {
+                animator.SetTrigger("EnemyAttack");
+            } else {
+                animator.SetTrigger("attack");
+            }
             SoundManager.Instance.RandomizeSfx(attack1, attack2);
             player.TakeDamage((float)playerDamage);
             attackWaitTime = 0f;
