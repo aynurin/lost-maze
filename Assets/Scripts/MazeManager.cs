@@ -383,19 +383,6 @@ public class MazeManager : MonoBehaviour {
             wall.dmg50Sprite = allTiles.Where(pf => pf.NameLike($"{prefabKey}_50_", 2)).RandomOrNull<SpriteRenderer>().sprite;
             wall.dmg25Sprite = allTiles.Where(pf => pf.NameLike($"{prefabKey}_25_", 2)).RandomOrNull<SpriteRenderer>().sprite;
             wall.dmg00Sprite = allTiles.Where(pf => pf.NameLike($"{prefabKey}_0_", 2)).RandomOrNull<SpriteRenderer>().sprite;
-
-            if (wall.dmg75Sprite == null) {
-                Debug.LogError($"dmg75Sprite '{prefabKey}' not found");
-            }
-            if (wall.dmg50Sprite == null) {
-                Debug.LogError($"dmg50Sprite '{prefabKey}' not found");
-            }
-            if (wall.dmg25Sprite == null) {
-                Debug.LogError($"dmg25Sprite '{prefabKey}' not found");
-            }
-            if (wall.dmg00Sprite == null) {
-                Debug.LogError($"dmg00Sprite '{prefabKey}' not found");
-            }
         }
 
         return tile;

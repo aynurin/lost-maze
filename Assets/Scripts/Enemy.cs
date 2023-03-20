@@ -18,6 +18,8 @@ public class Enemy : MovingObject {
     protected override void Start() {
         GameManager.Instance.AddEnemyToList(this);
         animator = GetComponent<Animator>();
+        Debug.Log("animator.SetInteger(mode, 4)");
+        animator.SetInteger("mode", 4);
         player = GameManager.Instance.Player;
         base.Start();
     }
@@ -57,7 +59,6 @@ public class Enemy : MovingObject {
         if (playerDirection.sqrMagnitude > float.Epsilon) {
             animator.SetFloat("horizontal", direction.x);
             animator.SetFloat("vertical", direction.y);
-            animator.SetInteger("mode", 3);
         }
         if (playerDirection.sqrMagnitude > 1) {
             StartMoving(direction);

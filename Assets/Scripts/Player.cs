@@ -111,7 +111,6 @@ public class Player : MovingObject {
         if (movement.sqrMagnitude > float.Epsilon) {
             Rigidbody.velocity = Vector2.zero;
         }
-        Debug.Log($"Player velocity: {Rigidbody.velocity}");
     }
 
     void FixedUpdate() {
