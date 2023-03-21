@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Enemy : MovingObject {
@@ -25,6 +26,7 @@ public class Enemy : MovingObject {
     }
 
     void Reset() {
+        playerDamage = 1;
         moveUnitsPerSecond = 1.5f;
         attacksPerSecond = 2f;
     }
@@ -73,6 +75,10 @@ public class Enemy : MovingObject {
         } else {
             return null;
         }
+    }
+
+    internal void StartGameAt(MazeCell cell) {
+        Debug.Log($"Enemy {this} is starting at {cell.Row}x{cell.Col}");
     }
 
     void OnCollisionEnter2D(Collision2D collision) {

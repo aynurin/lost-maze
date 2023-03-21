@@ -60,8 +60,11 @@ public class MazeManager : MonoBehaviour {
 
     private void PlaceEnemies(int level, List<MazeCell> allCells, List<MazeCell> solutionCells) {
         var enemyCells = new List<MazeCell>(allCells.RandomItems((int)Mathf.Log(level, 2F) + 1));
-        PlaceTiles(enemiesTiles, enemyCells);
         foreach (var cell in enemyCells) {
+            var enemyTile = enemiesTiles.RandomItem();
+            var enemy = enemyTile.GetComponent<Enemy>();
+            PlaceTile(enemyTile, cell);
+            enemy.StartGameAt(cell);
             RemoveCellsArea(cell, 1, allCells, solutionCells);
         }
     }
@@ -107,13 +110,6 @@ public class MazeManager : MonoBehaviour {
         var row = -(int)position.y / cellHeight;
         var cell = mazeGrid[row, col];
         return cell;
-    }
-
-
-    private void PlaceTiles(ICollection<GameObject> tiles, IEnumerable<MazeCell> cells) {
-        foreach (var cell in cells) {
-            PlaceTile(tiles.RandomItem(), cell);
-        }
     }
 
     public void Groundwork() {
