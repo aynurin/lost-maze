@@ -62,9 +62,7 @@ public class MazeManager : MonoBehaviour {
         var enemyCells = new List<MazeCell>(allCells.RandomItems((int)Mathf.Log(level, 2F) + 1));
         foreach (var cell in enemyCells) {
             var enemyTile = enemiesTiles.RandomItem();
-            var enemy = enemyTile.GetComponent<Enemy>();
-            PlaceTile(enemyTile, cell);
-            enemy.StartGameAt(cell);
+            PlaceTile(enemyTile, cell).GetComponent<Enemy>().StartGameAt(cell);
             RemoveCellsArea(cell, 1, allCells, solutionCells);
         }
     }
@@ -87,8 +85,8 @@ public class MazeManager : MonoBehaviour {
         }
     }
 
-    private void PlaceTile(GameObject tile, MazeCell cell) {
-        Instantiate(tile, FindPosition(cell), Quaternion.identity);
+    private GameObject PlaceTile(GameObject tile, MazeCell cell) {
+        return Instantiate(tile, FindPosition(cell), Quaternion.identity);
     }
 
     private void PlaceInstance(GameObject gameObject, MazeCell cell) {

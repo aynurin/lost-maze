@@ -2,15 +2,16 @@ using UnityEngine;
 
 public abstract class MovingObject : MonoBehaviour {
     public float moveUnitsPerSecond;
-    public LayerMask blockingLayer;
 
     public BoxCollider2D BoxCollider { get; private set; }
-    public Rigidbody2D Rigidbody { get; private set; }
+    protected Rigidbody2D Rigidbody { get; private set; }
+    protected Animator Animator { get; private set; }
 
     // Start is called before the first frame update
     protected virtual void Start() {
         BoxCollider = GetComponent<BoxCollider2D>();
         Rigidbody = GetComponent<Rigidbody2D>();
+        Animator = GetComponent<Animator>();
     }
 
     protected virtual void StartMoving(Vector2 direction) {
