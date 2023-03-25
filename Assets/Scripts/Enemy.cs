@@ -135,6 +135,19 @@ public class Enemy : MovingObject {
             return (State)Animator.GetInteger("mode");
         }
         set {
+            switch (value) {
+                case State.Alert:
+                case State.Idle:
+                    speedMultiplier = 0;
+                    break;
+                case State.Patroll:
+                case State.Search:
+                    speedMultiplier = 0.3f;
+                    break;
+                default:
+                    speedMultiplier = 1;
+                    break;
+            }
             Animator.SetInteger("mode", (int)value);
         }
     }
@@ -149,13 +162,18 @@ public class Enemy : MovingObject {
 
     private Vector2 Patrol(MazeCell currentCell) {
         if (currentGoal == Vector2.zero) {
-            var nextCell = currentCell.Neighbours.Where(c => distFromBase[c] <= maxPatrolDistanceFromBase).RandomOrNull();
+            var nextCell = currentCell.Links.Where(c => distFromBase[c] <= maxPatrolDistanceFromBase).RandomOrNull();
+            if (nextCell == null) {
+                nextCell = currentCell.Links.OrderBy(c => distFromBase[c]).FirstOrDefault();
+            }
             if (nextCell == null) {
                 Debug.LogError($"No cell to patroll from {currentCell}");
             } else {
                 currentGoal = GameManager.Instance.mazeManager.FindPosition(nextCell);
             }
+            Debug.Log($"{currentCell}->{nextCell}: {currentGoal}");
         }
+        Debug.Log($"{currentCell}: {currentGoal} ({((currentGoal - (Vector2)BoxCollider.bounds.center).normalized)})");
         return (currentGoal - (Vector2)BoxCollider.bounds.center).normalized;
     }
 

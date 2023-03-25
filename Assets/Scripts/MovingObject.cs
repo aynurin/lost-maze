@@ -2,6 +2,7 @@ using UnityEngine;
 
 public abstract class MovingObject : MonoBehaviour {
     public float moveUnitsPerSecond;
+    protected float speedMultiplier = 1f;
 
     public BoxCollider2D BoxCollider { get; private set; }
     protected Rigidbody2D Rigidbody { get; private set; }
@@ -15,7 +16,7 @@ public abstract class MovingObject : MonoBehaviour {
     }
 
     protected virtual void StartMoving(Vector2 direction) {
-        var targetPosition = Rigidbody.position + direction * moveUnitsPerSecond * Time.fixedDeltaTime;
+        var targetPosition = Rigidbody.position + direction * moveUnitsPerSecond * speedMultiplier * Time.fixedDeltaTime;
         Rigidbody.MovePosition(targetPosition);
     }
 }

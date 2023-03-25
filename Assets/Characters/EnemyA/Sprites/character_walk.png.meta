@@ -285,7 +285,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -322,9 +322,9 @@ TextureImporter:
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
-    crunchedCompression: 1
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
@@ -1289,7 +1289,7 @@ TextureImporter:
       walk_3: -3714987382563562326
       walk_21: 4312765686203540801
       walk_22: 5251978615751408329
-      walk_23: 2965599932687856292
+      walk_18: 4408406346810168619
       walk_39: -8747296145255524082
       walk_10: 8428286525173097495
       walk_11: -2787140197056013511
@@ -1320,12 +1320,12 @@ TextureImporter:
       walk_20: -5106187503225981072
       walk_8: 2251703588619409307
       walk_19: -485737157877676475
-      walk_41: 4762964406250004357
       walk_2: 6971375644381031630
-      walk_27: -8803371887732516606
       walk_34: -4977435019415729165
+      walk_27: -8803371887732516606
+      walk_41: 4762964406250004357
       walk_4: -2044624726750869082
-      walk_18: 4408406346810168619
+      walk_23: 2965599932687856292
       walk_16: -3336701548478254045
   spritePackingTag: 
   pSDRemoveMatte: 0
