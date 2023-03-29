@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 2
@@ -7184,7 +7184,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Maze_SpriteSheet_304: 2028414550
-      Maze_SpriteSheet_309: -671595393
+      Maze_SpriteSheet_93: 1326401685
       Maze_SpriteSheet_268: 1635865649
       Maze_SpriteSheet_133: -119343178
       Maze_SpriteSheet_129: -289526494
@@ -7516,9 +7516,9 @@ TextureImporter:
       Maze_SpriteSheet_6: -1390569091
       Maze_SpriteSheet_121: -685579152
       Maze_SpriteSheet_70: -1086568729
-      Maze_SpriteSheet_106: -35604756
       Maze_SpriteSheet_212: 305172371
-      Maze_SpriteSheet_93: 1326401685
+      Maze_SpriteSheet_106: -35604756
+      Maze_SpriteSheet_309: -671595393
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

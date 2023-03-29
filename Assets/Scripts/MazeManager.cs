@@ -4,7 +4,7 @@ using System.Text;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MazeManager : MonoBehaviour {
+public class MazeManager : MonoBehaviour, ISceneManager {
     public MazeGrid mazeGrid;
     public DijkstraDistances distances;
     public int columns = 10;
@@ -93,17 +93,17 @@ public class MazeManager : MonoBehaviour {
         gameObject.transform.position = FindPosition(cell);
     }
 
-    internal Vector3 FindPosition(MazeCell cell) {
+    public Vector3 FindPosition(MazeCell cell) {
         var x = cell.Col * cellWidth + cellWidth / 2;
         var y = -cell.Row * cellHeight - cellHeight / 2;
         return new Vector3(x, y, 0f);
     }
 
-    internal Vector3 FindDirection(MazeCell from, MazeCell to) {
+    public Vector3 FindDirection(MazeCell from, MazeCell to) {
         return new Vector3(to.Col - from.Col, -(to.Row - from.Row));
     }
 
-    internal MazeCell FindCellAt(Vector3 position) {
+    public MazeCell FindCellAt(Vector3 position) {
         var col = (int)position.x / cellWidth;
         var row = -(int)position.y / cellHeight;
         var cell = mazeGrid[row, col];
@@ -380,6 +380,10 @@ public class MazeManager : MonoBehaviour {
         }
 
         return tile;
+    }
+
+    public Vector3 GetSceneCenter() {
+        return new Vector3(columns * cellWidth / 2, -rows * cellHeight / 2, -10);
     }
 
     private struct Position {

@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour {
 
     public float turnDelay = .1f;
     public float playerFoodPoints = 100;
-    public MazeManager mazeManager;
+    public ISceneManager mazeManager;
 
     [HideInInspector] internal bool playersTurn = true;
 
@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour {
     private List<Enemy> enemies;
 
     public Player Player { get => GameObject.FindGameObjectWithTag("Player").GetComponent<Player>(); }
+    private Grid Grid { get => GameObject.FindGameObjectWithTag("Grid").GetComponent<Grid>(); }
     public bool IsLoading { get; private set; }
 
     void Awake() {
@@ -33,7 +34,7 @@ public class GameManager : MonoBehaviour {
 
         DontDestroyOnLoad(gameObject);
         enemies = new List<Enemy>();
-        mazeManager = GetComponent<MazeManager>();
+        mazeManager = GetComponent<ISceneManager>();
         InitGame();
     }
 
@@ -79,8 +80,7 @@ public class GameManager : MonoBehaviour {
     }
 
     void CenterCamera() {
-        var mazeCenter = new Vector3(mazeManager.columns * mazeManager.cellWidth / 2, -mazeManager.rows * mazeManager.cellHeight / 2, -10);
-        GameObject.Find("Main Camera").transform.position = mazeCenter;
+        GameObject.Find("Main Camera").transform.position = mazeManager.GetSceneCenter();
     }
 
     public void AddEnemyToList(Enemy script) {
