@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 2
@@ -132,23 +132,23 @@ TextureImporter:
       name: Maze_Isometric_1
       rect:
         serializedVersion: 2
-        x: 800
-        y: 800
-        width: 200
-        height: 100
+        x: 1792
+        y: 1920
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 796b97d761006c5d28d21c6de5ecf86f
@@ -161,23 +161,23 @@ TextureImporter:
       name: Maze_Isometric_4
       rect:
         serializedVersion: 2
-        x: 700
-        y: 750
-        width: 200
-        height: 100
+        x: 2048
+        y: 1792
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 83984497bf1fef19c9db731568d7b8c3
@@ -190,23 +190,23 @@ TextureImporter:
       name: Maze_Isometric_5
       rect:
         serializedVersion: 2
-        x: 900
-        y: 750
-        width: 200
-        height: 100
+        x: 2560
+        y: 1792
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 66e3bd16f8a6cc707bcebfbe30bdbfc8
@@ -219,23 +219,23 @@ TextureImporter:
       name: Maze_Isometric_8
       rect:
         serializedVersion: 2
-        x: 600
-        y: 700
-        width: 200
-        height: 100
+        x: 2304
+        y: 1664
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 5c261ee6af7780e5495536640e0ca5dd
@@ -248,23 +248,23 @@ TextureImporter:
       name: Maze_Isometric_9
       rect:
         serializedVersion: 2
-        x: 800
-        y: 700
-        width: 200
-        height: 100
+        x: 2816
+        y: 1664
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 4c668c8b0816265ad8f41f9f35dc7a2f
@@ -277,23 +277,23 @@ TextureImporter:
       name: Maze_Isometric_10
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 700
-        width: 200
-        height: 100
+        x: 1024
+        y: 1536
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 58b62a900556a7fb59ed28cc34f53800
@@ -306,23 +306,23 @@ TextureImporter:
       name: Maze_Isometric_13
       rect:
         serializedVersion: 2
-        x: 500
-        y: 650
-        width: 200
-        height: 100
+        x: 2560
+        y: 1536
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 6d1ad1dacdf2706318fe6e13fc7900f4
@@ -335,23 +335,23 @@ TextureImporter:
       name: Maze_Isometric_14
       rect:
         serializedVersion: 2
-        x: 700
-        y: 650
-        width: 200
-        height: 100
+        x: 3072
+        y: 1536
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 8ec935f011b252003b25db60403084d4
@@ -364,23 +364,23 @@ TextureImporter:
       name: Maze_Isometric_15
       rect:
         serializedVersion: 2
-        x: 900
-        y: 650
-        width: 200
-        height: 100
+        x: 768
+        y: 1408
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 9926f6ed6e7ab37f8b95dfb106920a61
@@ -393,23 +393,23 @@ TextureImporter:
       name: Maze_Isometric_16
       rect:
         serializedVersion: 2
-        x: 1100
-        y: 650
-        width: 200
-        height: 100
+        x: 1280
+        y: 1408
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 78afe73b99f70599291c598694e096f7
@@ -422,23 +422,23 @@ TextureImporter:
       name: Maze_Isometric_19
       rect:
         serializedVersion: 2
-        x: 400
-        y: 600
-        width: 200
-        height: 100
+        x: 2816
+        y: 1408
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 0e91f9d8c184bb532a9eb9887852806d
@@ -451,23 +451,23 @@ TextureImporter:
       name: Maze_Isometric_20
       rect:
         serializedVersion: 2
-        x: 600
-        y: 600
-        width: 200
-        height: 100
+        x: 3328
+        y: 1408
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: fb67d23ae61393c42b51abb1f1f290c8
@@ -480,23 +480,23 @@ TextureImporter:
       name: Maze_Isometric_21
       rect:
         serializedVersion: 2
-        x: 800
-        y: 600
-        width: 200
-        height: 100
+        x: 512
+        y: 1280
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: fa829544b03de61c19b50ba0fccf40fc
@@ -509,23 +509,23 @@ TextureImporter:
       name: Maze_Isometric_22
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 600
-        width: 200
-        height: 100
+        x: 1024
+        y: 1280
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 0d9a592420cd4d5fabb763d77d21c359
@@ -538,23 +538,23 @@ TextureImporter:
       name: Maze_Isometric_23
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 600
-        width: 200
-        height: 100
+        x: 1536
+        y: 1280
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 982f80a76050f692ab44e47ee2851929
@@ -567,23 +567,23 @@ TextureImporter:
       name: Maze_Isometric_26
       rect:
         serializedVersion: 2
-        x: 300
-        y: 550
-        width: 200
-        height: 100
+        x: 3072
+        y: 1280
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 377a493e529b861a6ab29b0337f8e3ae
@@ -596,23 +596,23 @@ TextureImporter:
       name: Maze_Isometric_27
       rect:
         serializedVersion: 2
-        x: 500
-        y: 550
-        width: 200
-        height: 100
+        x: 3584
+        y: 1280
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 87207dca657229849b7d981bc6392dfa
@@ -625,23 +625,23 @@ TextureImporter:
       name: Maze_Isometric_28
       rect:
         serializedVersion: 2
-        x: 700
-        y: 550
-        width: 200
-        height: 100
+        x: 256
+        y: 1152
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: c20820bbd88a37265ab8cbd9dc22ec6a
@@ -654,23 +654,23 @@ TextureImporter:
       name: Maze_Isometric_29
       rect:
         serializedVersion: 2
-        x: 900
-        y: 550
-        width: 200
-        height: 100
+        x: 768
+        y: 1152
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 8d5d26909b32aa6faad703f8b4eff385
@@ -683,23 +683,23 @@ TextureImporter:
       name: Maze_Isometric_30
       rect:
         serializedVersion: 2
-        x: 1100
-        y: 550
-        width: 200
-        height: 100
+        x: 1280
+        y: 1152
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 18c2ce74e287cf0e6b0992cee56e34b4
@@ -712,23 +712,23 @@ TextureImporter:
       name: Maze_Isometric_31
       rect:
         serializedVersion: 2
-        x: 1300
-        y: 550
-        width: 200
-        height: 100
+        x: 1792
+        y: 1152
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 3934ded680b73de648efbdec7508efa9
@@ -741,23 +741,23 @@ TextureImporter:
       name: Maze_Isometric_34
       rect:
         serializedVersion: 2
-        x: 200
-        y: 500
-        width: 200
-        height: 100
+        x: 3328
+        y: 1152
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 27ef1a2317e96d6db956fa9221b9620b
@@ -770,23 +770,23 @@ TextureImporter:
       name: Maze_Isometric_35
       rect:
         serializedVersion: 2
-        x: 400
-        y: 500
-        width: 200
-        height: 100
+        x: 3840
+        y: 1152
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: a01b94d84c39e0fe384bbddb12651a93
@@ -799,23 +799,23 @@ TextureImporter:
       name: Maze_Isometric_36
       rect:
         serializedVersion: 2
-        x: 600
-        y: 500
-        width: 200
-        height: 100
+        x: 0
+        y: 1024
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: ef170a9fdbd4ba2678294b20eecd7913
@@ -828,23 +828,23 @@ TextureImporter:
       name: Maze_Isometric_37
       rect:
         serializedVersion: 2
-        x: 800
-        y: 500
-        width: 200
-        height: 100
+        x: 512
+        y: 1024
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 3a4724bc3de0cb3f98898355c2e47cad
@@ -857,23 +857,23 @@ TextureImporter:
       name: Maze_Isometric_38
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 500
-        width: 200
-        height: 100
+        x: 1024
+        y: 1024
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: bbed8f201a281211c9eae40879628106
@@ -886,23 +886,23 @@ TextureImporter:
       name: Maze_Isometric_39
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 500
-        width: 200
-        height: 100
+        x: 1536
+        y: 1024
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 92121d4a89b88f9b5b8e73c4af35abde
@@ -915,23 +915,23 @@ TextureImporter:
       name: Maze_Isometric_40
       rect:
         serializedVersion: 2
-        x: 1400
-        y: 500
-        width: 200
-        height: 100
+        x: 2048
+        y: 1024
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: d0fff40c7d8069db09b211e4be48b017
@@ -944,23 +944,23 @@ TextureImporter:
       name: Maze_Isometric_42
       rect:
         serializedVersion: 2
-        x: 100
-        y: 450
-        width: 200
-        height: 100
+        x: 3072
+        y: 1024
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: a95a1dafc5095afcc83193a5a4e130de
@@ -973,23 +973,23 @@ TextureImporter:
       name: Maze_Isometric_43
       rect:
         serializedVersion: 2
-        x: 300
-        y: 450
-        width: 200
-        height: 100
+        x: 3584
+        y: 1024
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 50b898a987fcd497ea01c7be502b87e1
@@ -1002,23 +1002,23 @@ TextureImporter:
       name: Maze_Isometric_44
       rect:
         serializedVersion: 2
-        x: 500
-        y: 450
-        width: 200
-        height: 100
+        x: 4096
+        y: 1024
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: c63cf78c413ee5fd1b76aa4dbff099f0
@@ -1031,23 +1031,23 @@ TextureImporter:
       name: Maze_Isometric_45
       rect:
         serializedVersion: 2
-        x: 700
-        y: 450
-        width: 200
-        height: 100
+        x: 256
+        y: 896
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 7c9cbc939abc5a11383b7b6997096915
@@ -1060,23 +1060,23 @@ TextureImporter:
       name: Maze_Isometric_46
       rect:
         serializedVersion: 2
-        x: 900
-        y: 450
-        width: 200
-        height: 100
+        x: 768
+        y: 896
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: d7ee476399393b9078213b220fb5347c
@@ -1089,23 +1089,23 @@ TextureImporter:
       name: Maze_Isometric_47
       rect:
         serializedVersion: 2
-        x: 1100
-        y: 450
-        width: 200
-        height: 100
+        x: 1280
+        y: 896
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 36245d65b7c3f63cbb922f97ea163b4a
@@ -1118,23 +1118,23 @@ TextureImporter:
       name: Maze_Isometric_48
       rect:
         serializedVersion: 2
-        x: 1300
-        y: 450
-        width: 200
-        height: 100
+        x: 1792
+        y: 896
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 109e9885f8a8fb2e298d8ea007679653
@@ -1147,23 +1147,23 @@ TextureImporter:
       name: Maze_Isometric_49
       rect:
         serializedVersion: 2
-        x: 1500
-        y: 450
-        width: 200
-        height: 100
+        x: 2304
+        y: 896
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: d305fb2271d4a4c348e2a2077cc0e8e0
@@ -1176,23 +1176,23 @@ TextureImporter:
       name: Maze_Isometric_50
       rect:
         serializedVersion: 2
-        x: 0
-        y: 400
-        width: 200
-        height: 100
+        x: 2816
+        y: 896
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 39b8866dcb64428b2b70d599a28cbc7e
@@ -1205,23 +1205,23 @@ TextureImporter:
       name: Maze_Isometric_51
       rect:
         serializedVersion: 2
-        x: 200
-        y: 400
-        width: 200
-        height: 100
+        x: 3328
+        y: 896
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 353fd6574ea46efedb2a5fe9113a6c72
@@ -1234,23 +1234,23 @@ TextureImporter:
       name: Maze_Isometric_52
       rect:
         serializedVersion: 2
-        x: 400
-        y: 400
-        width: 200
-        height: 100
+        x: 3840
+        y: 896
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 1db3b2d3af7e740e5875293dd88be51c
@@ -1263,23 +1263,23 @@ TextureImporter:
       name: Maze_Isometric_53
       rect:
         serializedVersion: 2
-        x: 600
-        y: 400
-        width: 200
-        height: 100
+        x: 512
+        y: 768
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 4c6efc5a0bdb86a7781e50b3a7cabaf0
@@ -1292,23 +1292,23 @@ TextureImporter:
       name: Maze_Isometric_54
       rect:
         serializedVersion: 2
-        x: 800
-        y: 400
-        width: 200
-        height: 100
+        x: 1024
+        y: 768
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: d829885d1b0323ae9abf92efaa053bca
@@ -1321,23 +1321,23 @@ TextureImporter:
       name: Maze_Isometric_55
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 400
-        width: 200
-        height: 100
+        x: 1536
+        y: 768
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: b43ae3d35eba2f641a2e1b7fdbac1b1c
@@ -1350,23 +1350,23 @@ TextureImporter:
       name: Maze_Isometric_56
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 400
-        width: 200
-        height: 100
+        x: 2048
+        y: 768
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: b3d0d590672232ad9b57df2a9f7a65de
@@ -1379,23 +1379,23 @@ TextureImporter:
       name: Maze_Isometric_57
       rect:
         serializedVersion: 2
-        x: 1400
-        y: 400
-        width: 200
-        height: 100
+        x: 2560
+        y: 768
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: dbb538c09c8f07fc3a80d6688fe1c5ed
@@ -1408,23 +1408,23 @@ TextureImporter:
       name: Maze_Isometric_58
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 400
-        width: 200
-        height: 100
+        x: 3072
+        y: 768
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: d38e418c647fae088afdc2e6b07a9b05
@@ -1437,23 +1437,23 @@ TextureImporter:
       name: Maze_Isometric_59
       rect:
         serializedVersion: 2
-        x: 100
-        y: 350
-        width: 200
-        height: 100
+        x: 3584
+        y: 768
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 128f38f30586408e7a93fd0e8cb53cd7
@@ -1466,23 +1466,23 @@ TextureImporter:
       name: Maze_Isometric_60
       rect:
         serializedVersion: 2
-        x: 300
-        y: 350
-        width: 200
-        height: 100
+        x: 768
+        y: 640
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 1a6e1ad5da34c269e86432f89715958e
@@ -1495,23 +1495,23 @@ TextureImporter:
       name: Maze_Isometric_61
       rect:
         serializedVersion: 2
-        x: 500
-        y: 350
-        width: 200
-        height: 100
+        x: 1280
+        y: 640
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: d363f9ab8eb3a5e4b951edbd0c54e29f
@@ -1524,23 +1524,23 @@ TextureImporter:
       name: Maze_Isometric_62
       rect:
         serializedVersion: 2
-        x: 700
-        y: 350
-        width: 200
-        height: 100
+        x: 1792
+        y: 640
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 60aa34abdd3495520aef60e05aabd858
@@ -1553,23 +1553,23 @@ TextureImporter:
       name: Maze_Isometric_63
       rect:
         serializedVersion: 2
-        x: 900
-        y: 350
-        width: 200
-        height: 100
+        x: 2304
+        y: 640
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 883293229bbc19dc59dd954f9a909ec1
@@ -1582,23 +1582,23 @@ TextureImporter:
       name: Maze_Isometric_64
       rect:
         serializedVersion: 2
-        x: 1100
-        y: 350
-        width: 200
-        height: 100
+        x: 2816
+        y: 640
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: fdc4727f18d98a4b4bf432e885bb3dad
@@ -1611,23 +1611,23 @@ TextureImporter:
       name: Maze_Isometric_65
       rect:
         serializedVersion: 2
-        x: 1300
-        y: 350
-        width: 200
-        height: 100
+        x: 3328
+        y: 640
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 9655f5716968be7e0bd272377b159643
@@ -1640,23 +1640,23 @@ TextureImporter:
       name: Maze_Isometric_66
       rect:
         serializedVersion: 2
-        x: 1500
-        y: 350
-        width: 200
-        height: 100
+        x: 1024
+        y: 512
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: e4eb079d0cc44126f95a618238dac865
@@ -1669,23 +1669,23 @@ TextureImporter:
       name: Maze_Isometric_67
       rect:
         serializedVersion: 2
-        x: 200
-        y: 300
-        width: 200
-        height: 100
+        x: 1536
+        y: 512
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 2dbe25a0414d0eaca88a5475417f6946
@@ -1698,23 +1698,23 @@ TextureImporter:
       name: Maze_Isometric_68
       rect:
         serializedVersion: 2
-        x: 400
-        y: 300
-        width: 200
-        height: 100
+        x: 2048
+        y: 512
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: f2c8709ff67ab853caa52ff415a2f0c9
@@ -1727,23 +1727,23 @@ TextureImporter:
       name: Maze_Isometric_69
       rect:
         serializedVersion: 2
-        x: 600
-        y: 300
-        width: 200
-        height: 100
+        x: 2560
+        y: 512
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: b0baca95e8fc47136b6dc8ce41434390
@@ -1756,23 +1756,23 @@ TextureImporter:
       name: Maze_Isometric_70
       rect:
         serializedVersion: 2
-        x: 800
-        y: 300
-        width: 200
-        height: 100
+        x: 3072
+        y: 512
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: ac23cf534438362a89ec6d8228bcae08
@@ -1785,23 +1785,23 @@ TextureImporter:
       name: Maze_Isometric_71
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 300
-        width: 200
-        height: 100
+        x: 1280
+        y: 384
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 733d4545a53039aee96bba472d5dbc2a
@@ -1814,23 +1814,23 @@ TextureImporter:
       name: Maze_Isometric_72
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 300
-        width: 200
-        height: 100
+        x: 1792
+        y: 384
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 7d764f050473f02299e6d3b09af44a7f
@@ -1843,23 +1843,23 @@ TextureImporter:
       name: Maze_Isometric_73
       rect:
         serializedVersion: 2
-        x: 1400
-        y: 300
-        width: 200
-        height: 100
+        x: 2304
+        y: 384
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 5544d9401b6c37f50a42cdfb5fde0da6
@@ -1872,23 +1872,23 @@ TextureImporter:
       name: Maze_Isometric_74
       rect:
         serializedVersion: 2
-        x: 300
-        y: 250
-        width: 200
-        height: 100
+        x: 2816
+        y: 384
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 613b184897ba6054d9e71ab199783f6f
@@ -1901,23 +1901,23 @@ TextureImporter:
       name: Maze_Isometric_75
       rect:
         serializedVersion: 2
-        x: 500
-        y: 250
-        width: 200
-        height: 100
+        x: 1536
+        y: 256
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: da678bb166b33254bb05064a40b59dfd
@@ -1930,23 +1930,23 @@ TextureImporter:
       name: Maze_Isometric_76
       rect:
         serializedVersion: 2
-        x: 700
-        y: 250
-        width: 200
-        height: 100
+        x: 2048
+        y: 256
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 3020e4cb722c93e48ae87ba0a84cbc75
@@ -1959,23 +1959,23 @@ TextureImporter:
       name: Maze_Isometric_77
       rect:
         serializedVersion: 2
-        x: 900
-        y: 250
-        width: 200
-        height: 100
+        x: 2560
+        y: 256
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 5bcb6d839ea7da844b70e0b5b2860bfc
@@ -1988,23 +1988,23 @@ TextureImporter:
       name: Maze_Isometric_78
       rect:
         serializedVersion: 2
-        x: 1100
-        y: 250
-        width: 200
-        height: 100
+        x: 1792
+        y: 128
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: e9b6eb733e651344bb8544e158515a80
@@ -2017,23 +2017,23 @@ TextureImporter:
       name: Maze_Isometric_79
       rect:
         serializedVersion: 2
-        x: 1300
-        y: 250
-        width: 200
-        height: 100
+        x: 2304
+        y: 128
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 74706cb3f7290b241948be469a5c769f
@@ -2046,23 +2046,23 @@ TextureImporter:
       name: Maze_Isometric_80
       rect:
         serializedVersion: 2
-        x: 400
-        y: 200
-        width: 200
-        height: 100
+        x: 2048
+        y: 0
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: f981ef9fc244c9a44a89e18480dd2f32
@@ -2072,407 +2072,407 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Maze_Isometric_81
+      name: Maze_Isometric_0
       rect:
         serializedVersion: 2
-        x: 600
-        y: 200
-        width: 200
-        height: 100
+        x: 2048
+        y: 2048
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: 137174bdc41776d4eb2e856f9a417bff
-      internalID: 353822158
+      spriteID: 31325318344b98246bc608f05bea3032
+      internalID: -1772656725
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Maze_Isometric_82
+      name: Maze_Isometric_2
       rect:
         serializedVersion: 2
-        x: 800
-        y: 200
-        width: 200
-        height: 100
+        x: 2304
+        y: 1920
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: ce824083451f0a44791077f6c7878565
-      internalID: 1915645295
+      spriteID: a9f0da7401615154db645d8771078e7a
+      internalID: -706817024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Maze_Isometric_83
+      name: Maze_Isometric_3
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 200
-        width: 200
-        height: 100
+        x: 1536
+        y: 1792
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: 46ce35d296f041245b324a7a90e9669f
-      internalID: -594303115
+      spriteID: 3a5a029ad2c4fea4797874c2462d427f
+      internalID: 1139471090
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Maze_Isometric_84
+      name: Maze_Isometric_6
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 200
-        width: 200
-        height: 100
+        x: 1280
+        y: 1664
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: 63b3295c66640414ab3d755a185e5bd8
-      internalID: 1677989595
+      spriteID: 2c88d98a9de8647418a4f279f723330e
+      internalID: 50845891
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Maze_Isometric_85
+      name: Maze_Isometric_7
       rect:
         serializedVersion: 2
-        x: 500
-        y: 150
-        width: 200
-        height: 100
+        x: 1792
+        y: 1664
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: 7535c0b521e81764393cb4cdbb2e7537
-      internalID: 320654981
+      spriteID: 08feea358e9aa274db0c8337d48c5736
+      internalID: 1503281539
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Maze_Isometric_86
+      name: Maze_Isometric_11
       rect:
         serializedVersion: 2
-        x: 700
-        y: 150
-        width: 200
-        height: 100
+        x: 1536
+        y: 1536
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: ec475ba61b2338c4190f36200badeb0b
-      internalID: -11033038
+      spriteID: 2cc85f156b1c99349b1b33a80c2b7b2c
+      internalID: 1534869927
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Maze_Isometric_87
+      name: Maze_Isometric_12
       rect:
         serializedVersion: 2
-        x: 900
-        y: 150
-        width: 200
-        height: 100
+        x: 2048
+        y: 1536
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: cd9732221aebc2f4488839383097f8e8
-      internalID: 1542859466
+      spriteID: f06c14d182b2e80469301f8f458f50df
+      internalID: 1127780257
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Maze_Isometric_88
+      name: Maze_Isometric_17
       rect:
         serializedVersion: 2
-        x: 1100
-        y: 150
-        width: 200
-        height: 100
+        x: 1792
+        y: 1408
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: a5a53191871395c41a15c133e0763763
-      internalID: -1019406871
+      spriteID: fb197aaba88b66b4c8fbadc0f67ae322
+      internalID: -1469187384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Maze_Isometric_89
+      name: Maze_Isometric_18
       rect:
         serializedVersion: 2
-        x: 600
-        y: 100
-        width: 200
-        height: 100
+        x: 2304
+        y: 1408
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: 40f877e3b22f38f4eba728f494c88d9e
-      internalID: -1372860160
+      spriteID: 06160cd987942c84d8b6124698258cbf
+      internalID: 1881448130
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Maze_Isometric_90
+      name: Maze_Isometric_24
       rect:
         serializedVersion: 2
-        x: 800
-        y: 100
-        width: 200
-        height: 100
+        x: 2048
+        y: 1280
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: ee4a9d4ff89da1247a9a40df345090a5
-      internalID: -197489863
+      spriteID: 792bc5229f1d4c849b60f84b32c9734c
+      internalID: 1016047484
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Maze_Isometric_91
+      name: Maze_Isometric_25
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 100
-        width: 200
-        height: 100
+        x: 2560
+        y: 1280
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: fb568e4bbe1ddff45a9be57a2835ab69
-      internalID: 559419579
+      spriteID: a650d718a32c9204ebc7224194e79dd9
+      internalID: 1309743129
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Maze_Isometric_92
+      name: Maze_Isometric_32
       rect:
         serializedVersion: 2
-        x: 700
-        y: 50
-        width: 200
-        height: 100
+        x: 2304
+        y: 1152
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: cc2267397ae3bb9468207f65d2faafa2
-      internalID: 1193422536
+      spriteID: 25ad956db694cdc4ba5ca7798c92be27
+      internalID: -1295589044
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Maze_Isometric_93
+      name: Maze_Isometric_33
       rect:
         serializedVersion: 2
-        x: 900
-        y: 50
-        width: 200
-        height: 100
+        x: 2816
+        y: 1152
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: 92c9601f5c18a7b46b2a97ffb9ce5271
-      internalID: 1450074613
+      spriteID: 282422fb20653d343a9afb57d009e6d4
+      internalID: 226264036
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Maze_Isometric_94
+      name: Maze_Isometric_41
       rect:
         serializedVersion: 2
-        x: 800
-        y: 0
-        width: 200
-        height: 100
+        x: 2560
+        y: 1024
+        width: 512
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       physicsShape:
-      - - {x: 0, y: -50}
-        - {x: 100, y: 0}
-        - {x: 0, y: 50}
-        - {x: -100, y: 0}
+      - - {x: 0, y: -128}
+        - {x: 256, y: 0}
+        - {x: 0, y: 128}
+        - {x: -256, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: cde3c693abe659140b8cee75c77208bf
-      internalID: -82975958
+      spriteID: ca3f7bcc12689744b950ca1f3189f281
+      internalID: -895338794
       vertices: []
       indices: 
       edges: []
@@ -2568,21 +2568,7 @@ TextureImporter:
       Maze_Isometric_79: 2024190440
       Maze_Isometric_8: 1435841871
       Maze_Isometric_80: 930679075
-      Maze_Isometric_81: 353822158
-      Maze_Isometric_82: 1915645295
-      Maze_Isometric_83: -594303115
-      Maze_Isometric_84: 1677989595
-      Maze_Isometric_85: 320654981
-      Maze_Isometric_86: -11033038
-      Maze_Isometric_87: 1542859466
-      Maze_Isometric_88: -1019406871
-      Maze_Isometric_89: -1372860160
       Maze_Isometric_9: 1389371270
-      Maze_Isometric_90: -197489863
-      Maze_Isometric_91: 559419579
-      Maze_Isometric_92: 1193422536
-      Maze_Isometric_93: 1450074613
-      Maze_Isometric_94: -82975958
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
