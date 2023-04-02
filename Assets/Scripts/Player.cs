@@ -133,7 +133,7 @@ public class Player : MovingObject {
 
     private void OnDisable() {
         if (GameManager.Instance == null) {
-            Debug.Log("GameManager not found, probably the game is being destroyed...");
+            Debug.LogError("GameManager not found, probably the game is being destroyed...");
             return;
         }
         GameManager.Instance.playerFoodPoints = Food;

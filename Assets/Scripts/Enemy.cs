@@ -72,7 +72,7 @@ public class Enemy : MovingObject {
         If enemy sees the player, they will charge
         When the sight of player is lost, the enemy will stop chasing after a cooldown time
          */
-        var currentCell = GameManager.Instance.mazeManager.FindCellAt(BoxCollider.bounds.center);
+        var currentCell = GameManager.Instance.mazeRenderer.GetCellAt(BoxCollider.bounds.center);
         var playerDirection = (player.BoxCollider.bounds.center - BoxCollider.bounds.center);
 
         State currentState = CurrentState;
@@ -169,20 +169,18 @@ public class Enemy : MovingObject {
             if (nextCell == null) {
                 Debug.LogError($"No cell to patroll from {currentCell}");
             } else {
-                currentGoal = GameManager.Instance.mazeManager.FindPosition(nextCell);
+                currentGoal = GameManager.Instance.mazeRenderer.GetCellCenter(nextCell);
             }
-            Debug.Log($"{currentCell}->{nextCell}: {currentGoal}");
         }
-        Debug.Log($"{currentCell}: {currentGoal} ({((currentGoal - (Vector2)BoxCollider.bounds.center).normalized)})");
         return (currentGoal - (Vector2)BoxCollider.bounds.center).normalized;
     }
 
     private Vector2 ChargePlayer(MazeCell currentCell, Vector2 playerDirection) {
-        DijkstraDistances dist = DijkstraDistances.Find(GameManager.Instance.mazeManager.FindCellAt(player.BoxCollider.bounds.center));
+        DijkstraDistances dist = DijkstraDistances.Find(GameManager.Instance.mazeRenderer.GetCellAt(player.BoxCollider.bounds.center));
         var solution = dist.Solve(currentCell);
         if (solution.HasValue && solution.Value.Count > 1) {
             if (currentGoal == Vector2.zero) {
-                currentGoal = GameManager.Instance.mazeManager.FindPosition(solution.Value[1]);
+                currentGoal = GameManager.Instance.mazeRenderer.GetCellCenter(solution.Value[1]);
             }
             return (currentGoal - (Vector2)BoxCollider.bounds.center).normalized;
         } else {
