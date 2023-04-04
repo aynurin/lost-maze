@@ -17,6 +17,14 @@ public abstract class MovingObject : MonoBehaviour {
 
     protected virtual void StartMoving(Vector2 direction) {
         var targetPosition = Rigidbody.position + direction * moveUnitsPerSecond * speedMultiplier * Time.fixedDeltaTime;
-        Rigidbody.MovePosition(targetPosition);
+        var velocity = direction * moveUnitsPerSecond * speedMultiplier * Time.fixedDeltaTime;
+        if (this.GetType().Name == "Player") {
+            Debug.Log($"Start moving velocity: {velocity} ({direction}, {moveUnitsPerSecond}, {speedMultiplier}, {Time.fixedDeltaTime})");
+        }
+        // Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+        // Vector2 refVelocity = Vector2.zero;
+        // Vector2.SmoothDamp(Rigidbody.velocity, velocity, ref refVelocity)
+        Rigidbody.velocity = direction * moveUnitsPerSecond;
+        // Rigidbody.MovePosition(targetPosition);
     }
 }

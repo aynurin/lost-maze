@@ -108,14 +108,14 @@ public class Player : MovingObject {
         // movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        if (movement.sqrMagnitude > float.Epsilon) {
+        if (movement.sqrMagnitude < float.Epsilon) {
             Rigidbody.velocity = Vector2.zero;
         }
     }
 
     void FixedUpdate() {
         attackWaitTime += Time.fixedDeltaTime;
-        if (movement.magnitude > float.Epsilon) {
+        if (movement.sqrMagnitude > float.Epsilon) {
             StartMoving(movement.sqrMagnitude > 1 ? movement.normalized : movement);
         }
     }
@@ -133,7 +133,7 @@ public class Player : MovingObject {
 
     private void OnDisable() {
         if (GameManager.Instance == null) {
-            Debug.LogError("GameManager not found, probably the game is being destroyed...");
+            Debug.LogWarning("GameManager not found, probably the game is being destroyed...");
             return;
         }
         GameManager.Instance.playerFoodPoints = Food;
