@@ -105,18 +105,16 @@ public class Player : MovingObject {
 
     // Update is called once per frame
     void Update() {
-        // movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-        if (movement.sqrMagnitude < float.Epsilon) {
-            Rigidbody.velocity = Vector2.zero;
-        }
+        movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        movement = GameManager.Instance.mazeRenderer.TranslateMovement(movement);
     }
 
     void FixedUpdate() {
         attackWaitTime += Time.fixedDeltaTime;
         if (movement.sqrMagnitude > float.Epsilon) {
             StartMoving(movement.sqrMagnitude > 1 ? movement.normalized : movement);
+        } else {
+            Rigidbody.velocity = Vector2.zero;
         }
     }
 

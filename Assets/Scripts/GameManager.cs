@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour {
 
     [HideInInspector] internal Player Player { get => GameObject.FindGameObjectWithTag("Player").GetComponent<Player>(); }
     [HideInInspector] internal bool IsLoading { get; private set; }
-    [HideInInspector] internal IMazeRenderer mazeRenderer;
+    [HideInInspector] internal MazeRenderer mazeRenderer;
 
     private MazeManager mazeManager;
     private int level = 1;
@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour {
 
         DontDestroyOnLoad(gameObject);
         enemies = new List<Enemy>();
-        mazeRenderer = GetComponent<IMazeRenderer>();
+        mazeRenderer = GetComponent<MazeRenderer>();
         InitGame();
     }
 
@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour {
         Invoke("HideLevelImage", levelStartDelay);
 
         enemies.Clear();
-        
+
         mazeManager = new MazeManager(mazeRows, mazeColumns);
         mazeManager.Setup();
         mazeRenderer.RenderScene(mazeManager.MazeGrid);
@@ -86,7 +86,6 @@ public class GameManager : MonoBehaviour {
         PlaceEnemies();
         PlaceExit();
         PlaceFood();
-        CenterCamera();
     }
 
     private void PlacePlayer() {
@@ -135,9 +134,5 @@ public class GameManager : MonoBehaviour {
     private void HideLevelImage() {
         levelImage.SetActive(false);
         IsLoading = false;
-    }
-
-    void CenterCamera() {
-        GameObject.Find("Main Camera").transform.position = mazeRenderer.GetSceneCenter();
     }
 }
