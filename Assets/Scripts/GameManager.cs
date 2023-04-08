@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour {
 
     private void PlaceEnemies() {
         var enemyCount = (int)Mathf.Log(level, 2F) + 1;
-        var enemyCells = mazeManager.UnoccupiedCells.RandomItems(enemyCount);
+        var enemyCells = mazeManager.UnoccupiedCells.RandomOrNone(enemyCount);
         foreach (var cell in enemyCells) {
             var enemyTile = enemyObjects.RandomItem();
             var enemy = Instantiate(enemyTile, mazeRenderer.GetCellCenter(cell), Quaternion.identity);
@@ -121,7 +121,7 @@ public class GameManager : MonoBehaviour {
             } else if (tile.tag == "Soda") {
                 needed -= Player.Instance.pointsPerSoda;
             }
-            var cell = mazeManager.UnoccupiedCells.RandomItem();
+            var cell = mazeManager.UnoccupiedCells.RandomOrDefault();
             if (cell == null) {
                 Debug.LogWarning("No place to place food...");
             } else {

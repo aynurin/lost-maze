@@ -29,7 +29,19 @@ public class MazeRenderer : MonoBehaviour
         groundTilemap = GameObject.Find("GroundTilemap").GetComponent<Tilemap>();
         wallsTilemap = GameObject.Find("WallsTilemap").GetComponent<Tilemap>();
         overlayTilemap = GameObject.Find("OverlayTilemap").GetComponent<Tilemap>();
+        CreateSurroundings();
         CreateMaze();
+    }
+
+    public void CreateSurroundings() {
+        for (var sceneX = -wallThikness; sceneX < mazeGrid.Cols * (cellWidth + wallThikness); sceneX++) {
+            for (var sceneY = -wallThikness; sceneY < mazeGrid.Rows * (cellHeight + wallThikness); sceneY++) {
+                if (sceneX >= 0 && sceneX < mazeGrid.Cols * cellWidth + (mazeGrid.Cols - 1) * wallThikness && sceneY >= 0 && sceneY < mazeGrid.Rows * cellWidth + (mazeGrid.Rows - 1) * wallThikness) continue;
+                var scenePosition = new Vector3Int(sceneX, -sceneY, 0);
+                wallsTilemap.SetTile(scenePosition, wallRuleTile);
+                overlayTilemap.SetTile(scenePosition, overlayRuleTile);
+            }
+        }
     }
 
     public void CreateMaze() {
@@ -52,6 +64,7 @@ public class MazeRenderer : MonoBehaviour
                         groundTilemap.SetTile(scenePosition, groundRuleTile);
                     } else if (cell.Row + 1 < mazeGrid.Rows) {
                         wallsTilemap.SetTile(scenePosition, wallRuleTile);
+                        overlayTilemap.SetTile(scenePosition, overlayRuleTile);
                     }
                 }
             }
@@ -64,6 +77,7 @@ public class MazeRenderer : MonoBehaviour
                         groundTilemap.SetTile(new Vector3Int(sceneX, -sceneY, 0), groundRuleTile);
                     } else if (cell.Col + 1 < mazeGrid.Cols) {
                         wallsTilemap.SetTile(scenePosition, wallRuleTile);
+                        overlayTilemap.SetTile(scenePosition, overlayRuleTile);
                     }
                 }
             }
@@ -90,6 +104,7 @@ public class MazeRenderer : MonoBehaviour
                             groundTilemap.SetTile(scenePosition, groundRuleTile);
                         } else if (cell.Col + 1 < mazeGrid.Cols) {
                             wallsTilemap.SetTile(scenePosition, wallRuleTile);
+                            overlayTilemap.SetTile(scenePosition, overlayRuleTile);
                         }
                     }
                 }

@@ -119,8 +119,6 @@ public class Enemy : MovingObject {
             CurrentState = targetState;
         }
 
-        // Debug.Log($"{currentState}->{targetState}; move: {moveDirection}; look: {lookDirection}; see: {CanSeePlayer}");
-
         currentDirection = lookDirection;
         Animator.SetFloat("horizontal", lookDirection.x);
         Animator.SetFloat("vertical", lookDirection.y);
@@ -162,7 +160,7 @@ public class Enemy : MovingObject {
 
     private Vector2 Patrol(MazeCell currentCell) {
         if (currentGoal == Vector2.zero) {
-            var nextCell = currentCell.Links.Where(c => distFromBase[c] <= maxPatrolDistanceFromBase).RandomOrNull();
+            var nextCell = currentCell.Links.Where(c => distFromBase[c] <= maxPatrolDistanceFromBase).RandomOrDefault();
             if (nextCell == null) {
                 nextCell = currentCell.Links.OrderBy(c => distFromBase[c]).FirstOrDefault();
             }
