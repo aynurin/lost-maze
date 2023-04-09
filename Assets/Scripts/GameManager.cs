@@ -117,9 +117,9 @@ public class GameManager : MonoBehaviour {
             maxItems--;
             var tile = foodObjects.RandomItem();
             if (tile.tag == "Food") {
-                needed -= Player.Instance.pointsPerFood;
+                needed -= GameManager.Instance.Player.pointsPerFood;
             } else if (tile.tag == "Soda") {
-                needed -= Player.Instance.pointsPerSoda;
+                needed -= GameManager.Instance.Player.pointsPerSoda;
             }
             var cell = mazeManager.UnoccupiedCells.RandomOrDefault();
             if (cell == null) {

@@ -6,8 +6,6 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Player : MovingObject {
-    public static Player Instance { get; private set; }
-
     public int wallDamage;
     public int pointsPerFood;
     public int pointsPerSoda;
@@ -28,14 +26,6 @@ public class Player : MovingObject {
     private Animator animator;
     private Vector2 movement;
     private float attackWaitTime = 0f;
-
-    void Awake() {
-        if (Instance == null) {
-            Instance = this;
-        } else if (Instance != this) {
-            Destroy(gameObject);
-        }
-    }
 
     void Reset() {
         wallDamage = 1;

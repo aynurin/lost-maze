@@ -217,28 +217,6 @@ public class Enemy : MovingObject {
         }
     }
 
-    private void OnDrawGizmos() {
-        Gizmos.color = Color.white;
-        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, fovDepth);
-
-        Vector3 angle01 = DirectionFromAngle(-transform.eulerAngles.z, -fovAngle / 2);
-        Vector3 angle02 = DirectionFromAngle(-transform.eulerAngles.z, +fovAngle / 2);
-
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(transform.position, transform.position + angle01 * fovDepth);
-        Gizmos.DrawLine(transform.position, transform.position + angle02 * fovDepth);
-
-        if (CanSeePlayer) {
-            Gizmos.color = Color.green;
-            Gizmos.DrawLine(transform.position, player.gameObject.transform.position);
-        }
-    }
-
-    private Vector2 DirectionFromAngle(float eulerY, float angleInDegrees) {
-        angleInDegrees += eulerY;
-        return new Vector2(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
-    }
-
     internal void StartGameAt(MazeCell cell) {
         baseCell = cell;
         distFromBase = DijkstraDistances.Find(cell);
