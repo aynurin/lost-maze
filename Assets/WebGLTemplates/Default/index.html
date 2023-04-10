@@ -23,6 +23,86 @@
         <div id="unity-build-title">{{{ PRODUCT_NAME }}}</div>
       </div>
     </div>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.19.1/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.19.1/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.19.1/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.19.1/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.19.1/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.19.1/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.19.1/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.19.1/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.19.1/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.19.1/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          console.log(`Firebase SDK loaded with ${features.join(', ')}`);
+        } catch (e) {
+          console.log('Error loading the Firebase SDK, check the console.');
+          console.error(e);
+        }
+      });
+    </script>
+
+    <!--script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDdjCvdGXJyrM5hw2-yqmyOx_9IB3MVJwA",
+        authDomain: "lostmaze-bb114.firebaseapp.com",
+        projectId: "lostmaze-bb114",
+        storageBucket: "lostmaze-bb114.appspot.com",
+        messagingSenderId: "133814145236",
+        appId: "1:133814145236:web:1c7f6923781ec9a50eab41",
+        measurementId: "G-86VSCS62TD"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script-->
     <script>
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
